@@ -2,11 +2,13 @@ const { Client, Collection, Intents } = require('discord.js');
 const config = require('./config.json');
 const interface = require('./interface/web.js');
 const fs = require('fs');
+const verif = require('./data/verify_birthday.js');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once('ready', () => {
     console.log('Démarrage...');
+	verif.init(client);
 	interface.init();
 });
 
