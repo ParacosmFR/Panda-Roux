@@ -17,3 +17,8 @@ owner_id = your id
 token = bot token of course
 
 **This code is licensed, please ask for public use**
+
+### Commands list
+
+see /commands folder to have a command list.
+there is a lot of animations commands for the moment, but i will add moderation interactions of course.
