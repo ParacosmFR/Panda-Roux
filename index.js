@@ -1,11 +1,13 @@
 const { Client, Collection, Intents } = require('discord.js');
 const config = require('./config.json');
+const interface = require('./interface/web.js');
 const fs = require('fs');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once('ready', () => {
     console.log('Démarrage...');
+	interface.init();
 });
 
 client.commands = new Collection();
