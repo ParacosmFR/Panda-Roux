@@ -1,5 +1,4 @@
 const fs = require("fs");
-const births = require('./birthday.json');
 const discord = require('discord.js');
 module.exports.init = function(client) {
     compare(client);
@@ -8,6 +7,7 @@ module.exports.init = function(client) {
 
 function compare(client)
 {
+    const births = require('./birthday.json');
     date = new Date();
     month = date.getMonth() +1;
     date = date.getDate() + '/' + month;
