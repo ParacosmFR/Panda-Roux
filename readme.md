@@ -1,7 +1,7 @@
 ## Panda Roux
 ### multi usage discord bot
 
-if you want to use it, just clone the repo, and create a config.json file.
+if you want to use it, just clone the repo and create a config.json file.
 
 ```json
 {
@@ -15,3 +15,5 @@ film_api is the api token for themoviedb website.
 clientId = is the client id of your discord bot
 owner_id = your id
 token = bot token of course
+
+**This code is licensed, please ask for public use**
