@@ -1,4 +1,9 @@
 {
     "status" : "online",
-    "last_update" : "10/01/2022"
+    "last_update" : "10/01/2022",
+    "logs" : [{
+        "type": "warning",
+        "time" : "456456",
+        "description" : "test"
+    }]
 }

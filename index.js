@@ -8,8 +8,8 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once('ready', () => {
     console.log('Démarrage...');
-	verif.init(client);
 	interface.init();
+	verif.init(client);
 });
 
 client.commands = new Collection();
