@@ -7,6 +7,7 @@ module.exports = {
 		.setDescription('Server infos'),
 	async execute(interaction) {
 		let owner = await interaction.guild.fetchOwner();
-		await interaction.reply(`**Propriétaire du Serveur :** ${owner.displayName}\n`);
+		let server = await interaction.guild.fetch();
+		await interaction.reply(`**Propriétaire du Serveur :** ${owner.displayName}\nServeur crée le : ${interaction.guild.createdAt}\nNombre d'utilisateurs : ${server.approximateMemberCount}`);
 	},
 };

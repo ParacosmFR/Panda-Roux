@@ -1,0 +1,8 @@
+{
+    "UNAUTHORIZED_COMMAND" : "Commande non autorisée",
+    "PERMISSIONS_ERROR" : "Permissions insuffisantes, cet incident sera reporté",
+    "ONLY_FOR_MODS": "Uniquement pour les modérateurs",
+    "SINGLE_HUG": "se fait à lui même un calin :hugging:",
+    "HUG": "fait un superrrrrr calin à"
+
+}
