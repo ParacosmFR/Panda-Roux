@@ -16,7 +16,7 @@ clientId = is the client id of your discord bot
 owner_id = your id
 token = bot token of course
 
-**This code is licensed, please ask for public use**
+**For help, send me a dm**
 
 ### Commands list
 
