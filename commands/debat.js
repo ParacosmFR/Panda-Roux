@@ -14,8 +14,6 @@ module.exports = {
         const embded = new MessageEmbed();
         embded.setTitle("Débat choisi : ");
         embded.setDescription(`${item}`);
-        embded.setColor(RANDOM);
-        embded.footer(`@Panda Roux | 2022`);
         interaction.reply({ embeds: [ embded ]});
 	},
 };
