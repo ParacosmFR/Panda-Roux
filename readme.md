@@ -8,7 +8,8 @@ if you want to use it, just clone the repo and create a config.json file.
     "token": "",
     "owner_id": "",
     "clientId": "",
-    "film_api_v3": ""
+    "film_api_v3": "",
+    "lang": "LANG_CODE" // FR_fr
 }
 ```
 film_api is the api token for themoviedb website.
