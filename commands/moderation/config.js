@@ -19,9 +19,10 @@ module.exports = {
         .addStringOption(option =>
             option.setName('option')
                 .setDescription('option to set')
+                .setRequired(false)
                 .addChoice('logs', 'logs')
                 .addChoice('moderation', 'moderation'))
-                .addStringOption(option => option.setName('log-channel').setDescription('Enter a string')),
+        .addStringOption(option => option.setName('log-channel').setRequired(false).setDescription('Enter a string')),
     async execute(interaction) {
         try {
             configfile = require(root +`/data/guilds/${interaction.guild.id}.json`);
@@ -31,9 +32,11 @@ module.exports = {
         }
         if(interaction.memberPermissions.has('ADMINISTRATOR')) {
             const option = interaction.options.getString('option');
+            const logChannel = interaction.options.getString('log-channel');
             if(option == "logs") {logs(configfile)};
+            if(logChannel != null) {configfile.logChannel = logChannel};
             fs.writeFileSync(root +`/data/guilds/${interaction.guild.id}.json`, JSON.stringify(configfile));
-            interaction.reply(`**configuration du serveur modifiée :**\nlogs : ${configfile.logs}\nmodération: ${configfile.moderation}`);
+            interaction.reply(`**configuration du serveur:**\nlogs : ${configfile.logs}\nsalon des logs : <#${configfile.logChannel}>\n modération: ${configfile.moderation}`);
         }
 	},
 };

@@ -22,7 +22,7 @@ module.exports = {
             embded.setFooter(`${lang.ONLY_FOR_MODS}`);
             interaction.reply({ embeds: [ embded ] });
         } else {
-            interaction.reply(`***:no_entry_sign: | ${lang.PERMISSIONS_ERROR}***`);
+            interaction.reply({content:`***:no_entry_sign: | ${lang.PERMISSIONS_ERROR}***`, ephemeral: true});
         }
 	},
 };
