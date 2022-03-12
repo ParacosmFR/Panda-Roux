@@ -8,6 +8,7 @@ module.exports = {
 		.setName('trending-movies')
 		.setDescription('Give the trending movies of the day'),
 	async execute(interaction) {
+        if(config['film_api_v3'] == null) { interaction.reply({content: "Movie API is not defined", ephemeral: true}); return};
         axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${config['film_api_v3']}`).then(function(response) {
             const embded = new MessageEmbed();
             embded.setTitle("Trending Movies");

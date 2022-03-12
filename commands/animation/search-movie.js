@@ -9,6 +9,7 @@ module.exports = {
 		.setDescription('Search for a moovie')
         .addStringOption(option => option.setName('search').setDescription('title to search').setRequired(true)),
 	async execute(interaction) {
+        if(config['film_api_v3'] == null) { interaction.reply({content: "Movie API is not defined", ephemeral: true}); return};
         search = interaction.options.getString('search');
         axios.get(`https://api.themoviedb.org/3/search/movie?query=${search}&language="fr"&api_key=${config['film_api_v3']}`).then(function(response) {
             const embded = new MessageEmbed();

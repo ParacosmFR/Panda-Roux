@@ -12,6 +12,10 @@ function logs(configfile) {
     if(configfile.logs == false) {configfile.logs = true} else {configfile.logs = false};
 }
 
+function moderation(configfile) {
+    if(configfile.moderation == false) {configfile.moderation = true} else {configfile.moderation = false};
+}
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('config')
@@ -34,6 +38,7 @@ module.exports = {
             const option = interaction.options.getString('option');
             const logChannel = interaction.options.getString('log-channel');
             if(option == "logs") {logs(configfile)};
+            if(option == "moderation") {moderation(configfile)};
             if(logChannel != null) {configfile.logChannel = logChannel};
             fs.writeFileSync(root +`/data/guilds/${interaction.guild.id}.json`, JSON.stringify(configfile));
             interaction.reply(`**configuration du serveur:**\nlogs : ${configfile.logs}\nsalon des logs : <#${configfile.logChannel}>\n modération: ${configfile.moderation}`);
