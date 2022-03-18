@@ -26,7 +26,6 @@ module.exports = {
 	name: 'channelUpdate',
 	async execute(client, interaction) {
                 const guildConfig = find(interaction.guild.id);
-                console.log(guildConfig);
                 if(guildConfig == undefined) {console.log("Not found"); return;}
                 if(guildConfig.logs == true) {
                         const syschannel = (interaction.guild.channels.cache.get(guildConfig.logChannel));
