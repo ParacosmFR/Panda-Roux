@@ -10,11 +10,11 @@ module.exports = {
 		.setDescription('Help command'),
 	async execute(interaction) {
         const embded = new MessageEmbed();
-        embded.setTitle("Help / Command list");
-        embded.setDescription("Command list");
-        const commandFiles = fs.readdirSync(root + '/commands').filter(file => file.endsWith('.js'));
+        embded.setTitle("Liste des commandes");
+        embded.setDescription("Listes des commandes d'animations");
+        const commandFiles = fs.readdirSync(root + '/commands/animation/').filter(file => file.endsWith('.js'));
         for (const file of commandFiles) {
-            const command = require(root +`/commands/${file}`);
+            const command = require(root +`/commands/animation/${file}`);
             embded.addFields({name:`${command.data.name}`, value:`${command.data.description}`});
         }
         embded.setFooter("paracosm.fr");

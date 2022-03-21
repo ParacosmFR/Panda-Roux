@@ -4,6 +4,10 @@ const interface = require('./interface/web.js');
 const fs = require('fs');
 const verif = require('./data/verify_birthday.js');
 
+function send_update() {
+	
+}
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, "GUILDS", "GUILD_MEMBERS"] });
 
 client.once('ready', () => {
