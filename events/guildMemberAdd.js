@@ -15,7 +15,8 @@ module.exports = {
 	name: 'guildMemberAdd',
 	execute(client, interaction) {
 		const guildConfig = find(interaction.guild.id);
-        const channel = (interaction.guild.channels.cache.get(interaction.guild.systemChannelId));
+        if (guildConfig == null) {return;}
+        const channel = (interaction.guild.channels.cache.get(guildConfig.welcomeChannel));
         channel.send(`Bienvenue sur **${interaction.guild.name}** <@${interaction.user.id}> ! Passe du bon temps parmi nous ! 🧁`);
 		if(guildConfig.logs == true) {to_logs(interaction, guildConfig, interaction.user)};
 	},

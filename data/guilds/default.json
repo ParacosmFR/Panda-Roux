@@ -1,6 +1,7 @@
 {
     "logs": false,
     "logChannel" : false,
+    "welcomeChannel": false,
     "moderation": true,
     "animation": true
 }

@@ -26,7 +26,8 @@ module.exports = {
                 .setRequired(false)
                 .addChoice('logs', 'logs')
                 .addChoice('moderation', 'moderation'))
-        .addStringOption(option => option.setName('log-channel').setRequired(false).setDescription('Enter a string')),
+        .addStringOption(option => option.setName('log-channel').setRequired(false).setDescription('Log Channel to set'))
+        .addStringOption(option => option.setName('welcome-channel').setRequired(false).setDescription('Welcome Channel to set')),
     async execute(interaction) {
         try {
             configfile = require(root +`/data/guilds/${interaction.guild.id}.json`);
@@ -37,9 +38,11 @@ module.exports = {
         if(interaction.memberPermissions.has('ADMINISTRATOR')) {
             const option = interaction.options.getString('option');
             const logChannel = interaction.options.getString('log-channel');
+            const welcomeChannel = interaction.options.getString('welcome-channel');
             if(option == "logs") {logs(configfile)};
             if(option == "moderation") {moderation(configfile)};
             if(logChannel != null) {configfile.logChannel = logChannel};
+            if(welcomeChannel != null) {configfile.welcomeChannel = welcomeChannel};
             fs.writeFileSync(root +`/data/guilds/${interaction.guild.id}.json`, JSON.stringify(configfile));
             interaction.reply(`**configuration du serveur:**\nlogs : ${configfile.logs}\nsalon des logs : <#${configfile.logChannel}>\n modération: ${configfile.moderation}`);
         }
